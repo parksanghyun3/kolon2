@@ -1,57 +1,42 @@
 $(document).ready(function(){
-
+  var h = $(".info_wrap").innerHeight();
+  console.log(h);
   var tl = gsap.timeline();
-
-  tl.to(".resize_img", {
+  var progress = tl.progress(); 
+  tl.to(".scroll_wrap", {
     scrollTrigger: {
-      trigger: ".resize_con",
-      start: "-30% top",
-      end: "80% 20%",
-      pin: true,
-      // markers: true,
-      onEnter: function(){
-        $(".resize_con").addClass("onBg");
-        console.log("1");
-      },
-      onLeave: function(){
-        $(".resize_con").removeClass("onBg");
-        $(".inner").removeClass("pin_out");
-        gsap.to(".resize_img", {
-          scrollTrigger: {
-            trigger: ".heritage",
-            start: "top top",
-            end: "bottom top",
-            pin: true,
-            markers: true,
-          }
-        })
-        console.log("2");
-        
-      },
-      onEnterBack: function(){
-        $(".resize_con").addClass("onBg");
-        $(".inner").addClass("pin_out");
-        console.log("3");
-      },
-      onLeaveBack: function(){
-        $(".resize_con").removeClass("onBg");
-        // gsap.to(".resize_bgimg", {
-        //   backgroundSize: "100%",
-        //   borderRadius: "0",
-        // });
-        console.log("4");
-      },
+      trigger: ".info_wrap",
+      start: -h + " 30%",
+      end: "bottom 30%",
+      pin: ".scroll_wrap",
+      pinSpacing: false,
+      markers: true,
+      onUpdate(self){
+        if(self.progress.toFixed(3) == 0) {
+          $(".heritage_conlist").removeClass("onBg");
+        }
+
+        if(self.progress.toFixed(3) > 0.003) { 
+          $(".heritage_conlist").addClass("onBg");
+        }
+
+        console.log(self.progress.toFixed(3))
+        if(self.progress.toFixed(3) > 0.4) {
+          console.log("지금!");
+          $(".heritage_conlist").addClass("onScroll");
+
+        } else {
+          $(".heritage_conlist").removeClass("onScroll");
+        }
+
+        if(self.progress.toFixed(3) > 0.45) {
+          $(".heritage_conlist").addClass("active");
+          console.log("나온다!");
+        }
+      }
     }
   })
-
-  // .to(".resize_img", {
-  //   scrollTrigger: {
-  //     trigger: ".heritage",
-  //     top: "top top",
-  //     end: "bottom top",
-  //     pin: ".resize_img",
-  //     markers: true,
-  //   }
-  // })
-
+  // .to(".heritage_inner", {
+  //   width: "1200px"
+  // });
 });
