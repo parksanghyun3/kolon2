@@ -6,7 +6,7 @@ $(document).ready(function(){
   tl.to(".scroll_wrap", {
     scrollTrigger: {
       trigger: ".info_wrap",
-      start: -h + " 30%",
+      start: "top 30%",
       end: "bottom 30%",
       pin: ".scroll_wrap",
       pinSpacing: false,
