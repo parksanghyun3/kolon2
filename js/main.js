@@ -6,8 +6,8 @@ $(document).ready(function(){
   tl.to(".scroll_wrap", {
     scrollTrigger: {
       trigger: ".info_wrap",
-      start: "top 30%",
-      end: "bottom 30%",
+      start: "-80% top",
+      end: "90% bottom",
       pin: ".scroll_wrap",
       pinSpacing: false,
       markers: true,
