@@ -1,15 +1,15 @@
 $(document).ready(function(){
-  var h = $(".info_wrap").outerHeight();
-  var h2 = $(".history_wrap").outerHeight();
-  var h3 = $(".info_wrap").outerHeight();
-  var h4 = $(".scroll_wrap").outerHeight();
-  var height = h3 + h4;
+  var h = $(".heritage_conlist").outerHeight();
+
   var tl = gsap.timeline();
+
+
   tl.to(".scroll_wrap", {
     scrollTrigger: {
-      trigger: ".scroll_wrap",
-      start: "-30% top",
-      end: height + " 30%",
+      trigger: ".heritage_inner",
+      start: "top top",
+      end: "bottom bottom",
+      endTrigger: ".heritage_conlist",
       pin: ".scroll_wrap",
       pinSpacing: false,
       markers: true,
