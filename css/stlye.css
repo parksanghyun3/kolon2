@@ -86,8 +86,8 @@ header {position: fixed; top: 0; left: 0; width: 100%; height: 60px; background-
 .info_wrap .history_wrap .history_con .history_list .history_txt {margin: 20px 0 0 0; padding: 0 0 40px 0;letter-spacing: -.1em; transition: color .66s;}
 .info_wrap .history_wrap .history_con .history_list .history_txt p {display: inline-block; color: #666; }
 /* .info_wrap .history_wrap .history_con .history_list .history_txt:last-child {padding: 0 60px 0;} */
-.info_wrap .history_wrap .history_con .history_list .history_txt.plus_img p {padding: 0 30px 0 0; background: url("../images/icon-kolon-heritage.svg") no-repeat; background-position: center right; font-size: 14; font-weight: 700;}
-.info_wrap .history_wrap .history_con .history_list.on .history_txt.plus_img p {color: royalblue;}
+.info_wrap .history_wrap .history_con .history_list .history_txt.plus_img p {padding: 0 30px 0 0; background: url("../images/icon-kolon-heritage.svg") no-repeat; background-position: center right; font-size: 14; font-weight: 700; transition: all .66s;}
+.info_wrap .history_wrap .history_con .history_list .history_txt.plus_img.on p {color: #0078c3; background: url("../images/icon-kolon-heritage-on.svg") no-repeat; background-position: center right;}
 /* .info_wrap .history_wrap .history_con .history_list .history_txt {margin: 20px 0 60px 0;} */
 
 /* onScroll */

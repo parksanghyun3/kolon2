@@ -7,8 +7,8 @@ $(document).ready(function(){
       scrollTrigger: {
         trigger: $(".heritage_conlist").eq(i).find(".heritage_inner"),
         start: "top top",
-        end: "bottom center",
-        endTrigger: $(".heritage_conlist").eq(i).find(".history_wrap"),
+        end: "bottom-=100px 85%",
+        endTrigger: $(".heritage_conlist").eq(i).find(".info_wrap"),
         pin: $(".heritage_conlist").eq(i).find(".scroll_wrap"),
         pinSpacing: false,
         markers: true,
@@ -46,12 +46,13 @@ $(document).ready(function(){
         var txtSct = $(".heritage_conlist").eq(i).find(".plus_img").eq(e).offset().top;
         // var txtSct2 = $(".heritage_conlist").eq(i+1).find(".history_list").eq(e).offset().top;
   
-        if(imgSct + 180 > txtSct) {
+        if(imgSct + 300 > txtSct) {
           $(".heritage_conlist").eq(i).find(".heritage_img_list").eq(e).fadeIn();
-          // $(".heritage_conlist").eq(i).find(".history_list").eq(e).addClass("on")
+          $(".heritage_conlist").eq(i).find(".plus_img").eq(e).addClass("on");
+          $(".heritage_conlist").eq(i).find(".plus_img").eq(e-1).removeClass("on");
         } else {
           $(".heritage_conlist").eq(i).find(".heritage_img_list").eq(e).fadeOut();
-          // $(".heritage_conlist").eq(i).find(".history_list").eq(e).removeClass("on");
+          $(".heritage_conlist").eq(i).find(".plus_img").eq(e).removeClass("on");
         }
       });
     });
