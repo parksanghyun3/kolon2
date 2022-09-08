@@ -7,8 +7,10 @@ $(document).ready(function(){
       scrollTrigger: {
         trigger: $(".heritage_conlist").eq(i).find(".heritage_inner"),
         start: "top top",
+        // end: $(".history_wrap").eq(i).innerHeight() - $(".scroll_wrap").eq(i).innerHeight(),
+        // end: $(window).innerHeight() - $(".history_wrap").eq(i).innerHeight(),
         end: "bottom-=100px 85%",
-        endTrigger: $(".heritage_conlist").eq(i).find(".info_wrap"),
+        endTrigger: $(".heritage_conlist").eq(i).find(".history_wrap"),
         pin: $(".heritage_conlist").eq(i).find(".scroll_wrap"),
         pinSpacing: false,
         markers: true,
