@@ -1,12 +1,12 @@
 $(document).ready(function(){
 
   ScrollTrigger.matchMedia({
-    "(min-width: 769px)":function(){
-      var h = $(".heritage_conlist").outerHeight();
-      var tl = gsap.timeline();
+    "(min-width: 769px)"(){
+      // var h = $(".heritage_conlist").outerHeight();
+      // var tl = gsap.timeline();
       // var txtH = $(".history_wrap").outerHeight();
       $(".heritage_conlist").each(function(i){
-        tl.to($(".heritage_conlist").find(".scroll_wrap"), {
+        gsap.to($(".heritage_conlist").find(".scroll_wrap"), {
           scrollTrigger: {
             trigger: $(".heritage_conlist").eq(i).find(".heritage_inner"),
             start: "top top",
@@ -21,26 +21,20 @@ $(document).ready(function(){
               if(self.progress.toFixed(3) == 0) {
                 $(".heritage_conlist").eq(i).removeClass("onBg");
               }
-      
               if(self.progress.toFixed(3) > 0.003) { 
                 $(".heritage_conlist").eq(i).addClass("onBg");
               }
-      
               console.log(self.progress.toFixed(3))
               if(self.progress.toFixed(3) > 0.2) {
-                // console.log("지금!");
                 $(".heritage_conlist").eq(i).addClass("onScroll");
               } else {
                 $(".heritage_conlist").eq(i).removeClass("onScroll");
               }
-      
               if(self.progress.toFixed(3) > 0.35) {
                 $(".heritage_conlist").eq(i).addClass("active");
-                // console.log("나온다!");
               } else {
                 $(".heritage_conlist").eq(i).removeClass("active");
               }
-      
             }
           }
         })
@@ -49,6 +43,7 @@ $(document).ready(function(){
           $(window).on("scroll", function(){
             var imgSct = $(".heritage_conlist").eq(i).find(".scroll_wrap").offset().top;
             var txtSct = $(".heritage_conlist").eq(i).find(".plus_img").eq(e).offset().top;
+            console.log(txtSct);
             // var txtSct2 = $(".heritage_conlist").eq(i+1).find(".history_list").eq(e).offset().top;
       
             if(imgSct + 300 > txtSct) {
