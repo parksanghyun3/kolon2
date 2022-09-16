@@ -1,6 +1,7 @@
 $(document).ready(function(){
   var winW = $(window).innerWidth();
-
+  var H1 = $(".history_con").innerHeight();
+  console.log(H1);
   if(winW > 768) {
     ScrollTrigger.matchMedia({
       "(min-width: 769px)"(){
@@ -13,13 +14,12 @@ $(document).ready(function(){
               start: "top-=140px top",
               // end: $(".history_wrap").eq(i).innerHeight() - $(".scroll_wrap").eq(i).innerHeight(),
               // end: $(window).innerHeight() - $(".history_wrap").eq(i).innerHeight(),
-              end: "bottom " + H + "bottom",
+              end: "bottom " + H,
               endTrigger: $(this).find(".history_wrap"),
               // pin: $(".heritage_conlist").eq(i).find(".scroll_wrap"),
               pin: true,
               pinSpacing: false,
               markers: true,
-              scrub: 1,
               onUpdate(self){
                 if(self.progress.toFixed(3) == 0) {
                   $(".heritage_conlist").eq(i).removeClass("onBg");

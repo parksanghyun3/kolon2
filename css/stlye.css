@@ -28,7 +28,7 @@ header {position: fixed; top: 0; left: 0; width: 100%; height: 60px; background-
 /* -------------------------------------- main start ------------------------------------- */
 
 .heritage_sec {padding: 180px 0 0 0;}
-.heritage_conlist {width: 100%; overflow: hidden;}
+.heritage_conlist {width: 100%; overflow: hidden; border: 1px solid blue;}
 .inner.heritage_inner {padding: 140px 0 0 0; transition: all .66s;}
 .inner .scroll_wrap {position: relative; top: 0; width: 100%; height: 640px;}
 .heritage_conlist .inner .heritage_img {position: relative; top: 0; margin: 0 auto; width: 100%; height: 100%; transition: all .66s; z-index: 2;}
